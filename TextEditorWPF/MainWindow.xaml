@@ -1,0 +1,88 @@
+﻿<Window x:Class="TextEditorWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TextEditorWPF"
+        Title="Text Editor" Height="450" Width="800" ResizeMode="NoResize" 
+        Topmost="False" WindowState="Normal" Icon="Resources/icon.png">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem x:Name="MenuFile" Header="File" Height="25" Width="40">
+                <MenuItem x:Name="Create" Header="Create" Click="Create_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/add.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="Open" Header="Open" Click="Open_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/search.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="Save" Header="Save" Click="Save_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/save.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="Exit" Header="Exit" Click="Exit_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/exit.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem x:Name="MenuEdit" Header="Edit" Height="25" Width="40">
+                <MenuItem x:Name="SelectFont" Header="Font">
+                    <MenuItem x:Name="timesNewRomanFont" Header="Times New Roman" IsCheckable="True" 
+                              StaysOpenOnClick="True" Click="timesNewRomanFont_Click">
+                    </MenuItem>
+                    <MenuItem x:Name="verdanaFont" Header="Verdana" IsCheckable="True" 
+                              StaysOpenOnClick="True" Click="verdanaFont_Click">
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem x:Name="Copy" Header="Copy" Command="ApplicationCommands.Copy" InputGestureText="Ctrl+C"></MenuItem>
+                <MenuItem x:Name="Paste" Header="Paste" Command="ApplicationCommands.Paste" InputGestureText="Ctrl+V"></MenuItem>
+                <MenuItem x:Name="Cut" Header="Cut" Command="ApplicationCommands.Cut" InputGestureText="Ctrl+X"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <ToolBarTray DockPanel.Dock="Top">
+            <ToolBar>
+                <Button x:Name="saveButton" ToolTip="Save File" Click="Save_Click">
+                    <Image Source="Resources/save.png" Height="25" Width="25"></Image>
+                </Button>
+                <Button x:Name="openButton" ToolTip="Open File" Click="Open_Click">
+                    <Image Source="Resources/search.png" Height="25" Width="25"></Image>
+                </Button>
+                <Button x:Name="cutButton" Command="ApplicationCommands.Cut">
+                    <Image Source="Resources/scissors.png" Height="25" Width="25"></Image>
+                </Button>
+                <Button x:Name="pasteButton" Command="ApplicationCommands.Paste">
+                    <Image Source="/Resources/paste.png" Height="25" Width="25"></Image>
+                </Button>
+                <Label>FontSize</Label>
+                <ComboBox x:Name="selectFontSize" SelectionChanged="selectFontSize_SelectionChanged">
+                    <ComboBoxItem>10</ComboBoxItem>
+                    <ComboBoxItem IsSelected="True">15</ComboBoxItem>
+                    <ComboBoxItem>20</ComboBoxItem>
+                    <ComboBoxItem>25</ComboBoxItem>
+                    <ComboBoxItem>30</ComboBoxItem>
+                </ComboBox>
+            </ToolBar>
+        </ToolBarTray>
+        <TabControl Width="800">
+            <TabItem Header="Registration">
+                <Grid Background="#FF8EACEE">
+                    <TextBlock HorizontalAlignment="Center" TextAlignment="Center" VerticalAlignment="Top" FontSize="18" Margin="0,60,0,0" Text="Registration" TextWrapping="Wrap" Height="26" Width="182" FontFamily="Bahnschrift SemiCondensed"/>
+                    <TextBox x:Name="loginField" HorizontalAlignment="Center" VerticalAlignment="Top" TextWrapping="Wrap" Width="180" Height="25" Margin="0,100,0,0" BorderBrush="#FF0040FF" FontSize="14"/>
+                    <PasswordBox x:Name="passwordField" HorizontalAlignment="Center" VerticalAlignment="Top" Width="180" Height="25" Margin="0,140,0,0" BorderBrush="#FF0040FF" FontSize="14"/>
+                    <Button x:Name="applyButton" Content="Apply" HorizontalAlignment="Center" VerticalAlignment="Top" Height="30" Width="115" Margin="0,190,0,0" Background="#FF8BFF17" Click="applyButton_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Editor">
+                <Grid Background="#FFE5E5E5">
+                    <TextBox x:Name="textBox" Width="782"  Height="350" FontSize="15"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </DockPanel>
+</Window>
