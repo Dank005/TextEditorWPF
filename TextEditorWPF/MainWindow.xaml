@@ -69,20 +69,19 @@
             </ToolBar>
         </ToolBarTray>
         <TabControl Width="800">
-            <TabItem Header="Registration">
-                <Grid Background="#FF8EACEE">
-                    <TextBlock HorizontalAlignment="Center" TextAlignment="Center" VerticalAlignment="Top" FontSize="18" Margin="0,60,0,0" Text="Registration" TextWrapping="Wrap" Height="26" Width="182" FontFamily="Bahnschrift SemiCondensed"/>
-                    <TextBox x:Name="loginField" HorizontalAlignment="Center" VerticalAlignment="Top" TextWrapping="Wrap" Width="180" Height="25" Margin="0,100,0,0" BorderBrush="#FF0040FF" FontSize="14"/>
-                    <PasswordBox x:Name="passwordField" HorizontalAlignment="Center" VerticalAlignment="Top" Width="180" Height="25" Margin="0,140,0,0" BorderBrush="#FF0040FF" FontSize="14"/>
-                    <Button x:Name="applyButton" Content="Apply" HorizontalAlignment="Center" VerticalAlignment="Top" Height="30" Width="115" Margin="0,190,0,0" Background="#FF8BFF17" Click="applyButton_Click"/>
-                </Grid>
-            </TabItem>
             <TabItem Header="Editor">
                 <Grid Background="#FFE5E5E5">
                     <TextBox x:Name="textBox" Width="782"  Height="350" FontSize="15"/>
                 </Grid>
             </TabItem>
+            <TabItem Header="Registration">
+                <Grid Background="#FF8EACEE">
+                    <TextBlock HorizontalAlignment="Center" TextAlignment="Center" VerticalAlignment="Top" FontSize="18" Margin="0,60,0,0" Text="Log in" TextWrapping="Wrap" Height="26" Width="182" FontFamily="Bahnschrift SemiCondensed"/>
+                    <TextBox x:Name="loginField" HorizontalAlignment="Center" VerticalAlignment="Top" TextWrapping="Wrap" Width="180" Height="25" Margin="0,100,0,0" BorderBrush="#FF0040FF" FontSize="14"/>
+                    <PasswordBox x:Name="passwordField" HorizontalAlignment="Center" VerticalAlignment="Top" Width="180" Height="25" Margin="0,140,0,0" BorderBrush="#FF0040FF" FontSize="14"/>
+                    <Button x:Name="applyButton" Content="Apply" HorizontalAlignment="Center" VerticalAlignment="Top" Height="30" Width="115" Margin="0,190,0,0" Background="#FF8BFF17" Click="applyButton_Click"/>
+                </Grid>
+            </TabItem>
         </TabControl>
-
     </DockPanel>
 </Window>
